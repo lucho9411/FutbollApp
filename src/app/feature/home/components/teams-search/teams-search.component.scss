@@ -1,0 +1,50 @@
+.required-fields {
+    color: red;
+}
+
+.div-fundacion {
+    width:50%;
+}
+
+.div-buttons {
+    text-align: right;
+}
+
+.buttons-acciones {
+    width: 20% !important;
+    margin-left: 2% !important;
+}
+
+.options-disabled {
+    background-color: gray;
+}
+
+.options-enabled {
+    background-color: white;
+}
+
+.div-grid {
+    margin-top: 2%;
+}
+
+.div-col {
+    width:50%;
+}
+
+::ng-deep .p-datepicker table td {
+    padding: 0rem !important;
+  }
+  
+  ::ng-deep .p-datepicker table td > span {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  ::ng-deep .p-datepicker table {
+    font-size: 8pt;
+    margin: -0.143rem 0;
+  }
+  
+  ::ng-deep .p-datepicker .p-datepicker-header {
+    padding: 0rem;
+  }

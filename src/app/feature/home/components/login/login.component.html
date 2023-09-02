@@ -1,0 +1,52 @@
+<div class="grid" class="div-grid">
+    <div class="col-12">
+        <div class="card">
+            <form [formGroup]="formLogin">
+                <div class="p-fluid p-formgrid fila-form form_content">
+                    <div class="field col col-6 md:col-6">
+                        <label htmlFor="username">{{ 'forms.login.label-username' | translate}}  <b class="required-fields">*</b></label>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                            <input
+                                formControlName="username"
+                                tooltipPosition="top"
+                                [pTooltip]="formLogin.get('username')?.value"
+                                pInputText
+                                type="text"
+                                placeholder="{{ 'forms.login.placeholder-username' | translate}}"/>
+                        </div>
+                    </div>
+                    <div class="field col col-6 md:col-6">
+                        <label htmlFor="password">{{ 'forms.login.label-password' | translate}}  <b class="required-fields">*</b></label>
+                        <p-password
+                            formControlName="password"
+                            [toggleMask]="true"
+                            placeholder="{{ 'forms.login.placeholder-password' | translate}}"></p-password>
+                    </div>
+                    <br>
+                    <div class="field col-12 md:col-12" class="div-buttons">
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="{{ 'buttons.cancel-login' | translate}}"
+                            class="p-button-secondary mr-2 mb-2 buttons-acciones"
+                            (click)="cancelar();"
+                            >
+                        </button>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="{{ 'buttons.success-login' | translate}}"
+                            class="mr-2 mb-2 buttons-acciones"
+                            (click)="login()">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

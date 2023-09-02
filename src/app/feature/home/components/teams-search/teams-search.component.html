@@ -1,0 +1,76 @@
+<div class="grid" class="div-grid">
+    <div class="col-12">
+        <div class="card">
+            <form [formGroup]="formSearchTeam">
+                <div class="p-fluid p-formgrid fila-form form_content">
+                    <div class="field-radiobutton col col-6 md:col-6">
+                        <p-radioButton
+                            name="opciones"
+                            (onClick)="radio1()"></p-radioButton>
+                            <label htmlFor="option1">{{ 'forms.search.label-by-id' | translate}} </label>
+                            <br>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-sort-numeric-up"></i>
+                            </span>
+                            <p-inputNumber
+                                formControlName='id'
+                                tooltipPosition='top'
+                                [pTooltip]="formSearchTeam.get('id')?.value"
+                                inputId='integeronly'
+                                placeholder="{{ 'forms.search.placeholder-id' | translate }}"
+                                [disabled]='flagOptions!==1'
+                                [ngClass]="flagOptions!==1? 'options-disabled' : 'options-enabled'">
+                            </p-inputNumber>
+                        </div>
+                    </div>
+                    <p-divider></p-divider>
+                    <div class="field-radiobutton col col-6 md:col-6 div-col">
+                        <p-radioButton
+                            name="opciones"
+                            (onClick)="radio2()"></p-radioButton>
+                            <label htmlFor="option2">{{ 'forms.search.label-by-dates' | translate }} </label>
+                            <br>
+                        <p-calendar
+                            dateFormat="dd-mm-yy"
+                            inputId="dateformat"
+                            [showIcon]="true"
+                            appendTo="body"
+                            formControlName="initDate"
+                            placeholder="{{ 'forms.search.placeholder-date-init' | translate }}"
+                            [disabled]='flagOptions!==2'
+                            [ngClass]="flagOptions!==2? 'options-disabled' : 'options-enabled'"></p-calendar>
+                        <p-calendar
+                            dateFormat="dd-mm-yy"
+                            inputId="dateformat"
+                            [showIcon]="true"
+                            appendTo="body"
+                            formControlName="finishDate"
+                            placeholder="{{ 'forms.search.placeholder-date-finish' | translate }}"
+                            [disabled]='flagOptions!==2'
+                            [ngClass]="flagOptions!==2? 'options-disabled' : 'options-enabled'"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-12" class="div-buttons">
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="{{ 'buttons.cancel-search' | translate }}"
+                            class="p-button-secondary mr-2 mb-2 buttons-acciones"
+                            (click)="cancelar();"
+                            >
+                        </button>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="{{ 'buttons.success-search' | translate }}"
+                            class="mr-2 mb-2 buttons-acciones"
+                            (click)="consultar()">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+:host ::ng-deep {
+    .p-progressbar {
+        height: .5rem;
+        background-color: #D8DADC;
+    
+        .p-progressbar-value {
+            background-color: #607D8B;
+        }
+    }
+
+    .button-acciones {
+        height: 2rem;
+    }
+    .image-fifa {
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 1px black;
+        margin-left: 5%;
+        position: absolute;
+        margin-top: 4.5%;
+    }
+    .div-card {
+        width: 90%;
+        margin-left: 5%;
+        padding: 2%;
+        margin-top: -3%;
+    }
+    .h4-title {
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+                     'Segoe UI Symbol';
+        font-size: 2rem;
+        text-align: center;
+        color: #414141
+    }
+    .h4-usuario {
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+                     'Segoe UI Symbol';
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 3%;
+        color: #414141;
+        float: right;
+        margin-left: -8%;
+    }
+    .btn-consultar {
+        margin-left: 1rem;
+    }
+    p-table {
+        overflow-y: scroll;
+    }
+    .th-headers {
+        width:20%;
+        color: #414141;
+    }
+    .td-body {
+        width: 20%;
+    }
+    .button-login {
+        float: right;
+        margin-top: 5%;
+    }
+}
+
+:host ::ng-deep .td-acciones {
+    width: 10%;
+    background-color: #e3e7e3 !important;
+}

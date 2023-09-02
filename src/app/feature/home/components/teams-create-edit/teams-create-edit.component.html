@@ -1,0 +1,147 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <form [formGroup]="formCreateEditTeam">
+                <div class="p-fluid p-formgrid fila-form form_content">
+                    <div class="field">
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="nombre">{{ 'forms.create-edit.label-nombre' | translate}}  <b class="required-fields">*</b></label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-credit-card"></i>
+                                </span>
+                                <input
+                                    formControlName="nombre"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('nombre')?.value"
+                                    pInputText
+                                    type="text"
+                                    placeholder="{{ 'forms.create-edit.placeholder-nombre' | translate }}"/>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="estadio">{{ 'forms.create-edit.label-estadio' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-home"></i>
+                                </span>
+                                <input
+                                    formControlName="estadio"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('estadio')?.value"
+                                    pInputText
+                                    type="text"
+                                    placeholder="{{ 'forms.create-edit.placeholder-estadio' | translate }}"/>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="sitioWeb">{{ 'forms.create-edit.label-sitio-web' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">www</span>
+                                <input
+                                    formControlName="sitioWeb"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('sitioWeb')?.value"
+                                    pInputText
+                                    type="text"
+                                    placeholder="{{ 'forms.create-edit.placeholder-sitio-web' | translate }}"/>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="nacionalidad">{{ 'forms.create-edit.label-nacionalidad' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-flag"></i>
+                                </span>
+                                <input
+                                    formControlName="nacionalidad"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('nacionalidad')?.value"
+                                    pInputText
+                                    type="text"
+                                    placeholder="{{ 'forms.create-edit.placeholder-nacionalidad' | translate }}"/>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="entrenador">{{ 'forms.create-edit.label-entrenador' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-user"></i>
+                                </span>
+                                <input
+                                    formControlName="entrenador"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('entrenador')?.value"
+                                    pInputText
+                                    type="text"
+                                    placeholder="{{ 'forms.create-edit.placeholder-entrenador' | translate }}"/>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="capacidad">{{ 'forms.create-edit.label-capacidad' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-sort-numeric-up"></i>
+                                </span>
+                                <p-inputNumber
+                                    formControlName="capacidad"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('capacidad')?.value"
+                                    inputId="integeronly"
+                                    placeholder="{{ 'forms.create-edit.placeholder-capacidad' | translate }}">
+                                </p-inputNumber>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6">
+                            <label htmlFor="valor">{{ 'forms.create-edit.label-valor' | translate }} </label>
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-money-bill"></i>
+                                </span>
+                                <p-inputNumber
+                                    formControlName="valor"
+                                    tooltipPosition="top"
+                                    [pTooltip]="formCreateEditTeam.get('valor')?.value"
+                                    inputId="currency-us"
+                                    mode="currency"
+                                    currency="USD"
+                                    locale="en-US"
+                                    [minFractionDigits]="0"
+                                    [maxFractionDigits]="0"
+                                    placeholder="{{ 'forms.create-edit.placeholder-valor' | translate }}">
+                                </p-inputNumber>
+                            </div>
+                        </div>
+                        <div class="field col col-6 md:col-6" class="div-fundacion">
+                            <label htmlFor="fundacion">{{ 'forms.create-edit.label-fundacion' | translate }} <b class="required-fields">*</b></label>
+                            <p-calendar
+                                dateFormat="dd-mm-yy"
+                                inputId="dateformat"
+                                formControlName="fundacion"
+                                [showIcon]="true"></p-calendar>
+                        </div>
+                        <div class="field col-12 md:col-12" class="div-buttons">
+                            <button
+                                pButton
+                                pRipple
+                                type="button"
+                                label="{{ 'buttons.cancel-create-edit' | translate }}"
+                                class="p-button-secondary mr-2 mb-2 buttons-acciones"
+                                (click)="cancelar();"
+                                >
+                            </button>
+                            <button
+                                pButton
+                                pRipple
+                                type="button"
+                                label="{{ 'buttons.success-create-edit' | translate }}"
+                                class="mr-2 mb-2 buttons-acciones"
+                                (click)="guardar()">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

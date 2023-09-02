@@ -1,0 +1,185 @@
+<div class="layout-topbar">
+    <img
+        src="../../../../../assets/img/logo_fifa.jpg"
+        width="120" height="80" class="image-fifa" alt="FIFA">
+    <h4 class="h4-usuario" *ngIf='auth'>{{ 'hello-user' | translate }} {{auth.username}}</h4>
+    <button
+        pButton
+        pRipple
+        icon="pi pi-sign-in"
+        class="p-button-raised p-button-rounded p-button-success mr-2 button-login"
+        pTooltip="{{ 'buttons.login.tooltip' | translate }}"
+        tooltipPosition="left"
+        *ngIf="!auth"
+        (click)="login()">
+    </button>
+    <button
+        pButton
+        pRipple
+        icon="pi pi-sign-out"
+        class="p-button-raised p-button-rounded p-button-danger mr-2 button-login"
+        pTooltip="{{ 'buttons.logout.tooltip' | translate }}"
+        tooltipPosition="left"
+        *ngIf="auth"
+        (click)="logout()">
+    </button>
+</div>
+<div class="card div-card">
+    <h4 class="h4-title">{{ 'title' | translate }}</h4>
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <div class="my-2">
+                <button
+                    pButton
+                    pRipple
+                    label="{{ 'buttons.create.label' | translate }}"
+                    icon="pi pi-plus"
+                    class="p-button-info mr-2 btn-consultar"
+                    (click)="createEdit(1);"
+                    [disabled]="!auth">
+                </button>
+                <button
+                    pButton
+                    label="{{ 'buttons.search.label' | translate }}"
+                    class="p-button-outlined btn-consultar"
+                    icon="pi pi-search" 
+                    (click)="search()">
+                </button>
+                <button
+                    pButton
+                    label="{{ 'buttons.reload.label' | translate }}"
+                    class="p-button-outlined btn-consultar"
+                    icon="pi pi-spin pi-spinner" 
+                    (click)="reload()">
+                </button>
+            </div>
+        </ng-template>
+    </p-toolbar>
+    <p-table
+        #dt1
+        [value]="teams"
+        dataKey="id"
+        [rows]="10"
+        scrollDirection="both"
+        [scrollable]="true" 
+        [rowHover]="true"
+        styleClass="p-datatable-gridlines"
+        [paginator]="true"
+        responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <th id="nombre" pSortableColumn="nombre" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.nombre' | translate }}
+                        <p-sortIcon field="nombre"></p-sortIcon>
+                    </div>
+                   
+                </th>
+                <th id="estadio" pSortableColumn="estadio" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.estadio' | translate }}
+                        <p-sortIcon field="estadio"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="sitioWeb" pSortableColumn="sitioWeb" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.sitio-web' | translate }}
+                        <p-sortIcon field="sitioWeb"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="nacionalidad" pSortableColumn="nacionalidad" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.nacionalidad' | translate }}
+                        <p-sortIcon field="nacionalidad"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="fundacion" pSortableColumn="fundacion" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.fundacion' | translate }}
+                        <p-sortIcon field="fundacion"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="entrenador" pSortableColumn="entrenador" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.entrenador' | translate }}
+                        <p-sortIcon field="entrenador"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="capacidad" pSortableColumn="capacidad" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.capacidad' | translate }}
+                        <p-sortIcon field="capacidad"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="valor" pSortableColumn="valor" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.valor' | translate }}
+                        <p-sortIcon field="valor"></p-sortIcon>
+                    </div>
+                </th>
+                <th id="acciones" pFrozenColumn alignFrozen="right" class="th-headers">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'table.header.acciones' | translate }}
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-teams>
+            <tr>
+                <td class="td-body">{{ teams.nombre }}</td>
+                <td class="td-body">{{ teams.estadio }}</td>
+                <td class="td-body"><a href="#" (click)="openWebSite(teams.sitioWeb)">{{ teams.sitioWeb }}</a></td>
+                <td class="td-body">{{ teams.nacionalidad }}</td>
+                <td class="td-body">{{ teams.fundacion | date:'dd/MM/yyyy'}}</td>
+                <td class="td-body">{{ teams.entrenador }}</td>
+                <td class="td-body"><i class="pi pi-users"></i> {{ teams.capacidad | number: '1.0-0'}}</td>
+                <td class="td-body">{{ teams.valor | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td class="td-acciones" pFrozenColumn alignFrozen="right">
+                    <button
+                        pButton
+                        pRipple
+                        icon="pi pi-pencil"
+                        class="p-button-raised p-button-rounded p-button-warning mr-2 button-acciones"
+                        pTooltip="{{ 'buttons.edit.label' | translate }}"
+                        (click)="createEdit(2, teams)"
+                        [disabled]="!auth">
+                    </button>
+                    <button
+                        pButton
+                        pRipple
+                        icon="pi pi-trash"
+                        class="p-button-raised p-button-rounded p-button-danger mt-2 button-acciones"
+                        pTooltip="{{ 'buttons.delete.label' | translate }}"
+                        (click)="delete(teams)"
+                        [disabled]="!auth">
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">{{ 'table.messages.empty' | translate }}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="loadingbody">
+            <tr>
+                <td colspan="7">{{ 'table.messages.loading' | translate }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<p-toast
+    key="tst"
+    position="top-center"
+    [baseZIndex]="99999">
+</p-toast>
+<p-confirmDialog
+    header="Confirmar"
+    key="confirmarEliminar"
+    icon="pi pi-exclamation-triangle"
+    [style]="{width: '350px'}"
+    acceptButtonStyleClass="p-button-info"
+    rejectButtonStyleClass="p-button-text"
+    acceptLabel="{{ 'dialogs.confirm.acceptButton' | translate }}"
+    rejectLabel="{{ 'dialogs.confirm.rejectButton' | translate }}">
+</p-confirmDialog>

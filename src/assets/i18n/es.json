@@ -1,0 +1,111 @@
+{
+    "hello-user": "Hola! ",
+    "title": "EQUIPOS DE FÚTBOL",
+    "buttons": {
+        "login": {
+            "tooltip": "Login"
+        },
+        "logout": {
+            "tooltip": "Logout"
+        },
+        "create": {
+            "label": "Nuevo"
+        },
+        "edit": {
+            "label": "Editar"
+        },
+        "delete": {
+            "label": "Eliminar"
+        },
+        "search": {
+            "label": "Consultar"
+        },
+        "reload": {
+            "label": "Actualizar"
+        },
+        "cancel-search": "Cancelar",
+        "success-search": "Consultar",
+        "cancel-create-edit": "Cancelar",
+        "success-create-edit": "Guardar",
+        "cancel-login": "Cancelar",
+        "success-login": "Ingresar"
+    },
+    "table": {
+        "header": {
+            "nombre": "Nombre",
+            "estadio": "Estadio",
+            "sitio-web": "Sitio Web",
+            "nacionalidad": "Nacionalidad",
+            "fundacion": "Fundación",
+            "entrenador": "Entrenador",
+            "capacidad": "Capacidad",
+            "valor": "Valor",
+            "acciones": "Acciones"
+        },
+        "messages": {
+            "empty": "No se encontraron equipos de fútbol registrados.",
+            "loading": "Cargando información. Por favor espere."
+        }
+    },
+    "dialogs": {
+        "confirm": {
+            "acceptButton": "Aceptar",
+            "rejectButton": "Cancelar",
+            "delete-team": "¿Está seguro de eliminar el equipo llamado ",
+            "close-session": "¿Está seguro de cerrar su sesión actual?"
+        },
+        "alerts": {
+            "load-teams-error": "Error al cargar los equipos de fútbol",
+            "delete-team-success": "Equipo eliminado correctamente",
+            "delete-team-error": "Error al eliminar el equipo",
+            "close-session-success": "Sesión cerrada correctamente",
+            "close-sesssion-error": "Error al cerrar su sesión",
+            "search-success": "Consulta realizada correctamente",
+            "search-error": "Error al consultar equipos de fútbol",
+            "create-team-success": "Equipo creado correctamente",
+            "create-team-error": "Error al crear el equipo",
+            "edit-team-success": "Equipo editado correctamente",
+            "edit-team-error": "Error al editar el equipo",
+            "login-success": "Bienvenido al Sistema ",
+            "login-error": "Error al acceder al sistema"
+        }
+    },
+    "forms": {
+        "teams": {
+            "title1": "CREAR EQUIPO",
+            "title2": "EDITAR EQUIPO"
+        },
+        "search": {
+            "title": "CONSULTAR EQUIPOS",
+            "label-by-id": "Buscar por Id",
+            "placeholder-id": "Ingresar Id",
+            "label-by-dates": "Buscar por Fecha Fundación",
+            "placeholder-date-init": "Ingresar Fecha Inicial",
+            "placeholder-date-finish": "Ingresar Fecha Final"
+        },
+        "login": {
+            "title": "ACCESO AL SISTEMA",
+            "label-username": "Usuario",
+            "placeholder-username": "Usuario",
+            "label-password": "Clave",
+            "placeholder-password": "Clave"
+        },
+        "create-edit": {
+            "label-nombre": "Nombre",
+            "placeholder-nombre": "Nombre",
+            "label-estadio": "Estadio",
+            "placeholder-estadio": "Estadio",
+            "label-sitio-web": "Sitio Web",
+            "placeholder-sitio-web": "Sitio Web",
+            "label-nacionalidad": "Nacionalidad",
+            "placeholder-nacionalidad": "Nacionalidad",
+            "label-entrenador": "Entrenador",
+            "placeholder-entrenador": "Entrenador",
+            "label-capacidad": "Capacidad",
+            "placeholder-capacidad": "Capacidad",
+            "label-valor": "Valor",
+            "placeholder-valor": "Valor",
+            "label-fundacion": "Año de Fundación"
+        }
+    }
+}
